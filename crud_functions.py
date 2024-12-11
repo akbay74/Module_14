@@ -25,6 +25,5 @@ def get_all_products():
 # connection.close()
 
 if __name__ == '__main__':
-    initiate_db()
-    populate_db()
+    connection.commit()
     connection.close()
