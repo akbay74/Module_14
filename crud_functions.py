@@ -41,7 +41,7 @@ def add_user(username, email, age, balance = 1000):
 
 def is_included(name):
     check_user = cursor.execute('SELECT username FROM Users WHERE username = ?', (name,)).fetchone()
-    return bool(check_user)
+    return bool(check_user[0])
 
 if __name__ == '__main__':
     initiate_db()
