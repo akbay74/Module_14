@@ -19,11 +19,12 @@ price INTEGER NOT NULL
 def get_all_products():
     cursor.execute('SELECT * FROM Product')
     data = cursor.fetchall()
+    connection.commit()
     return data
 
 # connection.commit()
 # connection.close()
 
-if __name__ == '__main__':
-    connection.commit()
-    connection.close()
+# if __name__ == '__main__':
+#    connection.commit()
+#    connection.close()
