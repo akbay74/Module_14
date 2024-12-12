@@ -105,7 +105,7 @@ async def sing_up(message):
 @dp.message_handler(state = RegistrationState.username)
 async def set_username(message, state):
     if crud_functions.is_included(message.text):
-        await message.answer('Пользователь существует, введите другое имя')
+        await message.answer('Пользователь существует, введите другое имя', reply_markup = kb_reply)
         return
     await state.update_data(username = message.text)
     await message.answer('Введите свой email:')
